@@ -19,15 +19,28 @@ object Util {
      */
 
     val slack_access_token = ""
-    val slack_clientID = "362211397057.580405595494"
-    val slack_clientSecretKey = "e2e05ac8ebcda85a0d8639f90f3beeb1"
+
+
+    /*Your slack client ID*/
+    val slack_clientID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+    /*Your slack client Secret Key*/
+
+    val slack_clientSecretKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+
+
+    /*BOT token from slack console*/
+    val bot_accesstokne="xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+
     val redirectURi = "androidslackclient://callback"
     val scope = "channels:history"
     val BASE_URL = "https://slack.com/"
     val OAuth_URL = "oauth/authorize"
     val default_count = "100"
 
-    val bot_accesstokne="xoxb-362211397057-578968705234-BXmf8SYar4Nn3k668SLjWAXq"
+
 
 
 
