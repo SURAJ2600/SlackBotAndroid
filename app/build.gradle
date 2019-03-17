@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.suraj.androidslackclient"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    kapt "com.android.databinding:compiler:$gradlePluginVersion"
+
+    implementation 'com.android.support:design:28.0.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.core:core-ktx:1.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    //implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-rc01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    //Android Arch
+
+    implementation 'android.arch.lifecycle:extensions:1.1.0'
+
+    // Loading Indicators
+    implementation 'com.wang.avi:library:2.1.3'
+
+    //Retrofit
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    //pschroen/slack-api-android
+
+    implementation 'com.github.pschroen:slack-api-android:c66cc8d997'
+
+    //Socket
+
+    implementation('io.socket:socket.io-client:0.8.3') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    //Circular image view
+
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+}
